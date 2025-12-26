@@ -33,8 +33,7 @@ This application integrates both OpenAI and Gemini models for robust ingredient 
 *   **Networking**: Dio
 *   **Local Database**: Drift (SQLite)
 *   **AI/ML Integration**:
-    *   **OpenAI API**: Used for vision recognition and recipe text generation (GPT-4 Vision).
-    *   **Gemini API**: Alternative support for AI capabilities.
+    *   **OpenAI API**: Used for vision recognition and recipe text generation.
 *   **UI/UX**:
     *   Material Design 3
     *   Flutter Animate for smooth interactions
