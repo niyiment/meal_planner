@@ -46,9 +46,3 @@ final openAiDioProvider = Provider<Dio>((ref) {
   return dio;
 });
 
-final geminiDioProvider = Provider<Dio>((ref) {
-  final dio = ref.read(dioProvider);
-  dio.options.baseUrl = AppConstants.geminiBaseUrl;
-  return dio;
-});
-

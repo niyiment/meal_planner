@@ -9,15 +9,12 @@ class AppConstants {
 
   // API Configuration
   static String get openAiBaseUrl => dotenv.env['OPENAI_BASE_URL'] ?? 'https://api.openai.com/v1';
-  static String get geminiBaseUrl => dotenv.env['GEMINI_BASE_URL'] ?? 'https://generativelanguage.googleapis.com/v1beta';
 
   // API Keys - These should be loaded from environment or secure storage
   static String get openAiApiKey => dotenv.env['OPENAI_API_KEY'] ?? 'Your OpenAI API key';
-  static String get geminiApiKey => dotenv.env['GEMINI_API_KEY'] ?? 'Your Gemini API key';
 
   // AI Models
   static const String openAiVisionModel = 'gpt-5-nano';
-  static const String geminiVisionModel = 'gemini-pro-vision';
 
   // Network
   static const Duration connectionTimeout = Duration(seconds: 30);
@@ -36,15 +33,6 @@ class AppConstants {
   // Image Processing
   static const int maxImageSize = 2048;
   static const int imageQuality = 85;
-}
-
-enum AiProvider {
-  openai('OpenAI', 'GPT-4 Vision'),
-  gemini('Google', 'Gemini Pro Vision');
-
-  const AiProvider(this.displayName, this.modelName);
-  final String displayName;
-  final String modelName;
 }
 
 enum RecipeComplexityEnum {
