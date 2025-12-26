@@ -41,6 +41,7 @@ dependencies:
   logger: ^2.6.2
   connectivity_plus: ^7.0.0
   flutter_dotenv: ^6.0.0
+  printing: ^5.14.2
 
 
 dev_dependencies:
@@ -58,3 +59,6 @@ dev_dependencies:
 flutter:
 
   uses-material-design: true
+
+  assets:
+    - .env

@@ -1,6 +1,6 @@
 
 import 'package:dio/dio.dart';
-import '../extensions/exceptions.dart';
+import '../errors/exceptions.dart';
 
 class ErrorInterceptor extends Interceptor {
   @override

@@ -31,8 +31,7 @@ class TimeoutException extends NetworkException {
 }
 
 class ServerException extends NetworkException {
-  const ServerException([String message = 'Server error occurred'])
-      : super(message);
+  const ServerException([super.message = 'Server error occurred']);
 }
 
 /// API related exceptions

@@ -45,12 +45,6 @@ extension BuildContextExtensions on BuildContext {
   void showErrorSnackBar(String message) {
     showSnackBar(message, isError: true);
   }
-
-  /// Pop navigation
-  void pop<T>([T? result]) => Navigator.of(this).pop(result);
-
-  /// Check if can pop
-  bool get canPop => Navigator.of(this).canPop();
 }
 
 /// Extensions for String

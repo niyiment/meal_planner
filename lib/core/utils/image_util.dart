@@ -1,11 +1,10 @@
 
-import 'dart:nativewrappers/_internal/vm/lib/typed_data_patch.dart';
 
 import 'package:image/image.dart' as img;
 import 'package:meal_planner/core/constants/app_constant.dart';
 import 'dart:io';
 
-import '../extensions/exceptions.dart';
+import '../errors/exceptions.dart';
 
 class ImageUtil {
   /// Compress and resize image to meet size requirements

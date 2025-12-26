@@ -45,5 +45,13 @@
 	<true/>
 	<key>UIApplicationSupportsIndirectInputEvents</key>
 	<true/>
+
+    <!-- custom -->
+    <key>NSCameraUsageDescription</key>
+    <string>We need camera access to scan your ingredients</string>
+    <key>NSPhotoLibraryUsageDescription</key>
+    <string>We need photo access to select ingredient images</string>
+    <key>NSPhotoLibraryAddUsageDescription</key>
+    <string>We need permission to save recipe images</string>
 </dict>
 </plist>

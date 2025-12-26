@@ -1,15 +1,27 @@
+import 'package:flutter_dotenv/flutter_dotenv.dart';
+
 class AppConstants {
+  // App Info
+  static String get appName => dotenv.env['APP_NAME'] ?? 'AI Meal Planner';
+  static String get appVersion => dotenv.env['APP_VERSION'] ?? '1.0.0';
+  static bool get enableAnalytics => dotenv.env['ENABLE_ANALYTICS']?.toLowerCase() == 'true';
+  static bool get enableCrashlytics => dotenv.env['ENABLE_CRASHLYTICS']?.toLowerCase() == 'true';
+
   // API Configuration
-  static const String openAiBaseUrl = 'https://api.openai.com/v1';
-  static const String geminiBaseUrl = 'https://generativelanguage.googleapis.com/v1beta';
+  static String get openAiBaseUrl => dotenv.env['OPENAI_BASE_URL'] ?? 'https://api.openai.com/v1';
+  static String get geminiBaseUrl => dotenv.env['GEMINI_BASE_URL'] ?? 'https://generativelanguage.googleapis.com/v1beta';
 
   // API Keys - These should be loaded from environment or secure storage
-  static const String openAiApiKeyEnv = 'OPENAI_API_KEY';
-  static const String geminiApiKeyEnv = 'GEMINI_API_KEY';
+  static String get openAiApiKey => dotenv.env['OPENAI_API_KEY'] ?? 'Your OpenAI API key';
+  static String get geminiApiKey => dotenv.env['GEMINI_API_KEY'] ?? 'Your Gemini API key';
+
+  // AI Models
+  static const String openAiVisionModel = 'gpt-5-nano';
+  static const String geminiVisionModel = 'gemini-pro-vision';
 
   // Network
   static const Duration connectionTimeout = Duration(seconds: 30);
-  static const Duration receiveTimeout = Duration(seconds: 30);
+  static const Duration receiveTimeout = Duration(seconds:60);
   static const int maxRetries = 3;
 
   // Storage Keys
@@ -19,19 +31,11 @@ class AppConstants {
 
   // Cache
   static const int maxCachedRecipes = 100;
-  static const Duration cacheExpiration = Duration(days: 30);
+  static const Duration cacheExpiration = Duration(days: 7);
 
   // Image Processing
   static const int maxImageSize = 2048;
   static const int imageQuality = 85;
-
-  // AI Models
-  static const String openAiVisionModel = 'gpt-4-vision-preview';
-  static const String geminiVisionModel = 'gemini-pro-vision';
-
-  // App Info
-  static const String appName = 'AI Meal Planner';
-  static const String appVersion = '1.0.0';
 }
 
 enum AiProvider {
@@ -43,12 +47,14 @@ enum AiProvider {
   final String modelName;
 }
 
-enum RecipeComplexity {
+enum RecipeComplexityEnum {
   simple('Simple', 'Quick & Easy'),
   medium('Medium', 'Moderate Effort'),
   complex('Complex', 'Advanced Cooking');
 
-  const RecipeComplexity(this.label, this.description);
+  const RecipeComplexityEnum(this.label, this.description);
   final String label;
   final String description;
 }
+
+

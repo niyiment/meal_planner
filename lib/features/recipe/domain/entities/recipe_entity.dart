@@ -1,7 +1,7 @@
 import 'package:equatable/equatable.dart';
 
 /// Recipe entity representing a complete recipe
-class Recipe extends Equatable {
+class RecipeEntity extends Equatable {
   final String id;
   final String name;
   final String description;
@@ -17,7 +17,7 @@ class Recipe extends Equatable {
   final DateTime? updatedAt;
   final bool isSaved;
 
-  const Recipe({
+  const RecipeEntity({
     required this.id,
     required this.name,
     required this.description,
@@ -34,7 +34,7 @@ class Recipe extends Equatable {
     this.isSaved = false,
   });
 
-  Recipe copyWith({
+  RecipeEntity copyWith({
     String? id,
     String? name,
     String? description,
@@ -50,7 +50,7 @@ class Recipe extends Equatable {
     DateTime? updatedAt,
     bool? isSaved,
   }) {
-    return Recipe(
+    return RecipeEntity(
       id: id ?? this.id,
       name: name ?? this.name,
       description: description ?? this.description,
